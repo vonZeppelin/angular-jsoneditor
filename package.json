@@ -7,7 +7,7 @@
     "url": "https://github.com/angular-tools/ng-jsoneditor/issues"
   },
   "peerDependencies": {
-    "jsoneditor": "^5.5.6"
+    "jsoneditor": "https://github.com/viasocket/jsoneditor.git"
   },
   "description": "Angular version of the insanely cool jsoneditor",
   "devDependencies": {},

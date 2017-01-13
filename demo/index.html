@@ -3,47 +3,70 @@
 <head>
   <meta charset="utf-8">
   <title>Demo for NG-JSONEDITOR</title>
-  
-  <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
-  <script src="../bower_components/jsoneditor/dist/jsoneditor.min.js" type="text/javascript" ></script>
-
-  <link href="../bower_components/jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css" />
-
-  <script src="../ng-jsoneditor.js" type="text/javascript"></script>
+  <link href="../../dist/jsoneditor.css" rel="stylesheet" type="text/css">
+  <script src="./scripts/angular.min.js" type="text/javascript"></script>
+  <script src="../../dist/jsoneditor.js?q=8934397"></script>
+  <script src="./scripts/ng-jsoneditor.js?q=8934397" type="text/javascript"></script>
+  <!-- <script src="https://rawgithub.com/ajaxorg/ace-builds/master/src/ext-language_tools.js" type="text/javascript" charset="utf-8"></script> -->
+  <style type="text/css" media="screen">
+    .wrapper{margin: 50px auto; width: 1000px;}
+    .col{float: left; width: 50%}
+    .pdL4{padding-left:40px;}
+  </style>
 </head>
 <body>
-    <div ng-controller="ngCtrl">
-    <div ng-jsoneditor="onLoad" ng-model="obj.data" options="obj.options" style="width: 400px; height: 300px;"></div>
+    <div ng-controller="ngCtrl" class="wrapper">
+      <div class="col">
+        <div ng-jsoneditor="onLoad" ng-model="obj.data" options="obj.options" style="width: 100%; height: 400px;"></div>
+      </div>
 
-    <button type="button" class="btn btn-primary" ng-click="changeData()"><i class="fa fa-check-circle"></i> change data</button>
+      <div class="col">
+        <div class="pdL4">
+          <button type="button" class="btn btn-primary" ng-click="changeData()"><i class="fa fa-check-circle"></i> change data</button>
 
-    <button type="button" class="btn btn-primary" ng-click="changeOptions()"><i class="fa fa-check-circle"></i> change options</button>
+          <button type="button" class="btn btn-primary" ng-click="changeOptions()"><i class="fa fa-check-circle"></i> change options</button>
 
-    <pre>{{pretty(obj.data)}}</pre>
+          <pre>{{pretty(obj.data)}}</pre>
+        </div>
+      </div>
 
-</div>
 
-<script type="text/javascript">
-    var json = {"Array": [1, 2, 3], "Boolean": true, "Null": null, "Number": 123, "Object": {"a": "b", "c": "d"}, "String": "Hello World"};
-    // 
-    angular.module('ngApp', ['ng.jsoneditor']).controller('ngCtrl', function ($scope) {
-        $scope.obj = {data: json, options: {mode: 'tree'}};
-        $scope.onLoad = function (instance) {
-            instance.expandAll();
-            this.options.mode = 'code';
+    </div>
+
+    <script type="text/javascript">
+
+        // let 
+
+        var json = {
+          "Array": [1, 2, 3], "Boolean": true, "Null": null, "Number": 123, 
+          "Object": {"a": "b", "c": "d"}, "String": "Hello World",
+          "auto": "$Hello World"
         };
-        $scope.changeData = function () {
-            $scope.obj.data = {foo: 'bar'};
-        };
-        $scope.changeOptions = function () {
-            $scope.obj.options.mode = $scope.obj.options.mode == 'tree' ? 'code' : 'tree';
-        };
+        // 
+        angular.module('ngApp', ['ng.jsoneditor']).controller('ngCtrl', function ($scope) {
+            $scope.obj = {data: json, options: {mode: 'tree'}};
+            $scope.onLoad = function (instance) {
+                instance.expandAll();
+                this.options.mode = 'code';
+            };
+            $scope.changeData = function () {
+                $scope.obj.data = {foo: 'bar'};
+            };
+            $scope.changeOptions = function () {
+                $scope.obj.options.mode = $scope.obj.options.mode == 'tree' ? 'code' : 'tree';
+            };
 
-        //other
-        $scope.pretty = function (obj) {
-            return angular.toJson(obj, true);
-        }
-    });
-</script>
+            //other
+            $scope.pretty = function (obj) {
+              console.log(obj);
+              return obj;
+                // return angular.toJson(obj, true);
+            }
+            $scope.funcChange = function(obj){
+              console.log("funcChange", obj)
+            }
+
+        });
+    </script>
 </body>
 </html>

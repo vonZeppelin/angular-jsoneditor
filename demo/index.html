@@ -48,6 +48,10 @@
             $scope.onLoad = function (instance) {
                 instance.expandAll();
                 this.options.mode = 'code';
+                this.options.completer = [
+                  {value: "$sameer", score: 1000, meta: "custom"},
+                  {value: "$rathore", score: 1000, meta: "custom"}
+                    ];
             };
             $scope.changeData = function () {
                 $scope.obj.data = {foo: 'bar'};

@@ -1,18 +1,20 @@
 {
   "author": {
     "email": "",
-    "name": "angular-tools"
+    "name": "viasocket"
   },
   "bugs": {
-    "url": "https://github.com/angular-tools/ng-jsoneditor/issues"
+    "url": "https://github.com/viasocket/ng-jsoneditor/issues"
   },
   "peerDependencies": {
     "jsoneditor": "https://github.com/viasocket/jsoneditor.git"
   },
   "description": "Angular version of the insanely cool jsoneditor",
-  "devDependencies": {},
+  "devDependencies": {
+    "jsoneditor": "https://github.com/viasocket/jsoneditor.git"
+  },
   "directories": {},
-  "homepage": "https://github.com/angular-tools/ng-jsoneditor",
+  "homepage": "https://github.com/viasocket/ng-jsoneditor",
   "keywords": [
     "angular",
     "browser",
@@ -25,7 +27,7 @@
   "name": "ng-jsoneditor",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular-tools/ng-jsoneditor.git"
+    "url": "git+https://github.com/viasocket/ng-jsoneditor.git"
   },
   "version": "1.0.0"
 }

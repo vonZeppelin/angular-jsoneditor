@@ -11,7 +11,7 @@
   },
   "description": "Angular version of the insanely cool jsoneditor",
   "devDependencies": {
-    "jsoneditor": "https://github.com/viasocket/jsoneditor.git#500ab6714ba75204d3ea1618d02620100a04be43"
+    "jsoneditor": "https://github.com/viasocket/jsoneditor.git#3841f0df5a592a370c6862a0ea15f37f3f7b5f7c"
   },
   "directories": {},
   "homepage": "https://github.com/viasocket/ng-jsoneditor",

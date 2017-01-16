@@ -13,7 +13,7 @@
   "license": "The Artistic License 2.0",
   "dependencies": {
     "angular": "~1.x",
-    "jsoneditor": "https://github.com/viasocket/jsoneditor.git#4946483621b551c1331ec002c2e0bed24cf8b57a"
+    "jsoneditor": "https://github.com/viasocket/jsoneditor.git#5629bdb391befcd668b1f7f599f3fa3040231850"
   },
   "ignore": [
     "**/.*",

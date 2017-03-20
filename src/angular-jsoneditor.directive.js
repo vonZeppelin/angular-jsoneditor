@@ -14,7 +14,16 @@ export default () => {
             const createEditor = (options) => {
                 const settings = angular.extend({}, {}, options);
                 settings.onChange = () => {
-                    ngModel.$setViewValue(editor.get());
+                    try {
+                        ngModel.$setViewValue(editor.get());
+                    } catch (err) {
+                        throw err;
+                    } finally {
+                        // If the user specified a onChange callback, trigger it
+                        if (options.onChange && typeof options.onChange === 'function') {
+                            options.onChange();
+                        }
+                    }
                 };
                 element.html('');
                 return new Jsoneditor(element[0], settings);

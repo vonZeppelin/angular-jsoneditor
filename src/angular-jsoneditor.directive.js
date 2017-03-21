@@ -14,11 +14,17 @@ export default () => {
             const createEditor = (options) => {
                 const settings = angular.extend({}, {}, options);
                 settings.onChange = () => {
+                    let isValid = false;
                     try {
                         ngModel.$setViewValue(editor.get());
+                        isValid = true;
                     } catch (err) {
                         throw err;
                     } finally {
+                        // Update field validation
+                        ngModel.$setValidity('json', isValid);
+                        ngModel.$setTouched();
+                        $scope.$apply();
                         // If the user specified a onChange callback, trigger it
                         if (options.onChange && typeof options.onChange === 'function') {
                             options.onChange();

@@ -1,4 +1,4 @@
-# angular-jsoneditor
+# angular-jsoneditor [![npm](https://img.shields.io/npm/v/angular-jsoneditor.svg?style=flat-square)](https://github.com/isonet/angular-jsoneditor)[![licence](https://img.shields.io/npm/l/angular-jsoneditor.svg?style=flat-square)](https://img.shields.io/npm/l/angular-jsoneditor.svg)
 
 Angular wrapper for [jsoneditor](https://github.com/josdejong/jsoneditor)
 

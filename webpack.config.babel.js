@@ -3,17 +3,17 @@
 import webpack from 'webpack';
 import path from 'path';
 const libraryName = 'angular-jsoneditor';
-const outputFile = libraryName + '.js';
+const outputFile = 'angular-jsoneditor.js';
 
 export default {
     eslint: {
         configFile: '.eslintrc.json',
         fix: false
     },
-    entry: __dirname + '/src/index.js',
+    entry: path.resolve('./src/index.js'),
     devtool: 'source-map',
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve('./dist'),
         filename: outputFile,
         library: libraryName,
         libraryTarget: 'umd',
